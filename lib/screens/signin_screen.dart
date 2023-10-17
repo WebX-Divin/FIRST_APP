@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:first_app/reusable_widgets/reusable_widgets.dart';
+import 'package:first_app/screens/home_screen.dart';
 import 'package:first_app/screens/signup_screen.dart';
 import 'package:first_app/utils/color_utils.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class _SignInScreenState extends State<SignInScreen> {
               SizedBox(
                 height: 10,
               ),
-              reusableTextField("Enter Username", Icons.person_outline, false, _emailTextController),
+              reusableTextField("Enter Email", Icons.person_outline, false, _emailTextController),
               SizedBox(
                 height: 20,
               ),
@@ -48,7 +49,10 @@ class _SignInScreenState extends State<SignInScreen> {
                SizedBox(
                 height: 10,
               ),
-              signInSignUpButton(context, true, () {}),
+              signInSignUpButton(context, true, () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()));
+              }),
               signUpOption()
             ],
           ),
