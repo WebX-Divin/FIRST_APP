@@ -3,6 +3,7 @@
 import 'package:first_app/reusable_widgets/reusable_widgets.dart';
 import 'package:first_app/screens/home_screen.dart';
 import 'package:first_app/screens/signup_screen.dart';
+import 'package:first_app/screens/dashboard_screen.dart';
 import 'package:first_app/utils/color_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -49,10 +50,10 @@ class _SignInScreenState extends State<SignInScreen> {
                SizedBox(
                 height: 10,
               ),
-              signInSignUpButton(context, true, () {
-                Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()));
-              }),
+             signInSignUpButton(context, true, () {
+  Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen())); // Navigate to the DashboardScreen
+}),
+
               signUpOption()
             ],
           ),
